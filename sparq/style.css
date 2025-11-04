@@ -297,6 +297,7 @@ body.light-mode #canvas3d {
   margin-bottom: 10px;
   font-weight: 500;
   animation: fadeInUp 1s ease 0.3s both;
+  text-align: center;
 }
 
 .hero-tagline {
@@ -305,6 +306,7 @@ body.light-mode #canvas3d {
   font-style: italic;
   margin-bottom: 40px;
   animation: fadeInUp 1s ease 0.4s both;
+  text-align: center;
 }
 
 .hero-prize {
@@ -467,11 +469,21 @@ body.light-mode #canvas3d {
   backdrop-filter: blur(10px);
   margin-bottom: 30px;
   transition: all 0.4s ease;
+  width: fit-content;
+  margin: auto;
+  padding: 60px 80px;
 }
 
 .poster-placeholder:hover {
   border-color: var(--accent-primary);
   background: rgba(0, 212, 255, 0.05);
+}
+
+.poster-placeholder img {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
 }
 
 .poster-icon {
