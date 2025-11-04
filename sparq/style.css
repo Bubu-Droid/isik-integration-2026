@@ -491,6 +491,12 @@ body.light-mode #canvas3d {
   padding: 20px;
 }
 
+.form-btn-container {
+  text-align: center;
+  padding: 20px;
+  margin-top: 20px;
+}
+
 .poster-btn {
   display: inline-block;
   padding: 14px 35px;
