@@ -631,7 +631,7 @@ body.light-mode #canvas3d {
 
 .syllabus-list li::before {
   content: "▹";
-  position: absolute;
+  position: relative;
   left: 0;
   color: var(--accent-teal);
   font-size: 1.5rem;
