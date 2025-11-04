@@ -97,6 +97,14 @@ document.querySelectorAll(".page-section").forEach((section) => {
   observer.observe(section);
 });
 
+// Poster button notification
+document.querySelectorAll(".poster-btn").forEach((btn) => {
+  btn.addEventListener("click", (e) => {
+    e.preventDefault();
+    showNotification("📢 Event poster will be released soon! Stay tuned!");
+  });
+});
+
 // Parallax effect for hero section
 window.addEventListener(
   "scroll",
@@ -116,7 +124,7 @@ window.addEventListener(
 );
 
 // Add ripple effect to buttons
-document.querySelectorAll(".btn-hero, .poster-btn").forEach((button) => {
+document.querySelectorAll(".btn-hero, .poster-btn, .brochure-btn").forEach((button) => {
   button.addEventListener("click", function (e) {
     const ripple = document.createElement("span");
     const rect = this.getBoundingClientRect();
@@ -147,7 +155,7 @@ document.querySelectorAll(".btn-hero, .poster-btn").forEach((button) => {
                         opacity: 0;
                     }
                 }
-                .btn-hero, .poster-btn {
+                .btn-hero, .poster-btn, .brochure-btn {
                     position: relative;
                     overflow: hidden;
                 }
@@ -208,17 +216,6 @@ document.querySelectorAll(".date-card").forEach((card) => {
   card.style.transition = "all 0.6s ease";
   dateObserver.observe(card);
 });
-
-// Welcome message on first visit
-// const welcomeShown = sessionStorage.getItem("welcomeShown");
-// if (!welcomeShown) {
-//   setTimeout(() => {
-//     showNotification(
-//       "🚀 Welcome to SPARQ 2026! Where Numbers Meet Innovation 📊",
-//     );
-//     sessionStorage.setItem("welcomeShown", "true");
-//   }, 1000);
-// }
 
 // Floating stats animation
 const prizeAmount = document.querySelector(".prize-amount");
