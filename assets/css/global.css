@@ -113,6 +113,10 @@ body.light-mode .toggle-icon {
   .dropdown-link:hover {
     padding-left: 25px;
   }
+
+  .poster-placeholder {
+    padding: 30px 25px;
+  }
 }
 
 @media (max-width: 768px) {
@@ -136,5 +140,9 @@ body.light-mode .toggle-icon {
   .nav-menu {
     top: 54px;
     height: calc(100vh - 54px);
+  }
+
+  .poster-placeholder {
+    padding: 10px 8px;
   }
 }
