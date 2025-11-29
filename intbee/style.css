@@ -453,58 +453,80 @@ body.light-mode #canvas3d {
 
 /* Poster Section */
 .poster-placeholder {
-  background: var(--bg-card);
-  border: 3px dashed var(--border-color);
-  border-radius: 20px;
-  padding: 80px 40px;
-  text-align: center;
-  backdrop-filter: blur(10px);
-  margin-bottom: 30px;
-  transition: all 0.4s ease;
+    background: var(--bg-card);
+    border: 3px dashed var(--border-color);
+    border-radius: 20px;
+    padding: 60px 80px; /* Reduced and centered padding for large images */
+    text-align: center;
+    backdrop-filter: blur(10px);
+    margin: 40px auto 40px auto; /* Centering it horizontally and adding vertical margin */
+    transition: all 0.4s ease;
+    width: fit-content; /* Important: Ensures the placeholder box wraps the image content */
 }
 
 .poster-placeholder:hover {
-  border-color: var(--accent-primary);
-  background: rgba(255, 235, 59, 0.05);
+    border-color: var(--accent-primary);
+    background: rgba(255, 235, 59, 0.05);
 }
 
+/* New style for the image inside the placeholder */
+.poster-placeholder img {
+    width: 100%;
+    height: auto;
+    max-width: 500px; /* Constrains the image size */
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease;
+}
+
+.poster-placeholder:hover img {
+    transform: scale(1.02);
+}
+
+/* These styles are for a placeholder when no image is present, useful if you reuse this class */
 .poster-icon {
-  font-size: 5rem;
-  margin-bottom: 20px;
-  opacity: 0.7;
+    font-size: 5rem;
+    margin-bottom: 20px;
+    opacity: 0.7;
+    color: var(--accent-primary); /* Use accent color for visibility */
 }
 
 .poster-text {
-  font-size: 1.5rem;
-  color: var(--text-muted);
-  font-weight: 600;
+    font-size: 1.5rem;
+    color: var(--text-muted);
+    font-weight: 600;
 }
 
 .poster-container {
-  text-align: center;
-  padding: 20px;
+    text-align: center;
+    padding: 20px;
+    margin-bottom: 50px; /* Add margin below the button container */
 }
 
 .poster-btn {
-  display: inline-block;
-  padding: 14px 35px;
-  font-size: 1rem;
-  font-weight: 600;
-  text-decoration: none;
-  color: var(--text-primary);
-  background: rgba(255, 235, 59, 0.15);
-  border: 2px solid var(--accent-primary);
-  border-radius: 10px;
-  transition: all 0.3s ease;
-  position: relative;
-  overflow: hidden;
+    display: inline-block;
+    padding: 14px 35px;
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    color: var(--text-primary);
+    /* Using var(--accent-primary) color in rgba for consistency */
+    background: rgba(255, 235, 59, 0.15); 
+    border: 2px solid var(--accent-primary);
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
 }
 
 .poster-btn:hover {
-  background: rgba(255, 235, 59, 0.25);
-  color: #1a1a1a;
-  transform: translateY(-3px);
-  box-shadow: 0 10px 30px var(--shadow-color);
+    /* Using var(--accent-primary) color in rgba for consistency */
+    background: rgba(255, 235, 59, 0.25);
+    /* In dark mode, you typically want text-primary (white/light gray) or a dark color if background is light */
+    /* Since the page is primarily dark, I'll switch this to use var(--text-primary) or keep it the dark color you specified */
+    color: #1a1a1a; /* Retaining the dark text color you provided */
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px var(--shadow-color);
 }
 
 /* Event Cards */
