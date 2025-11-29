@@ -316,6 +316,8 @@ const resetZoomBtn = document.getElementById("resetZoom");
 let currentIndex = 0;
 let currentGalleryItems = [];
 let zoomLevel = 1;
+let zoomOriginX = 0;
+let zoomOriginY = 0;
 
 document.addEventListener("click", function (e) {
   if (e.target.closest(".gallery-item")) {
@@ -375,22 +377,48 @@ function updateLightboxImage() {
   lightboxDate.textContent = item.getAttribute("data-date");
   updateCounter();
   zoomLevel = 1;
+  zoomOriginX = 50; // Reset to center
+  zoomOriginY = 50; // Reset to center
   lightboxImg.style.transform = "scale(1)";
+  lightboxImg.style.transformOrigin = "center center";
+}
+
+function updateZoomTransform() {
+  if (zoomLevel === 1) {
+    lightboxImg.style.transform = "scale(1)";
+    lightboxImg.style.transformOrigin = "center center";
+  } else {
+    lightboxImg.style.transformOrigin = `${zoomOriginX}% ${zoomOriginY}%`;
+    lightboxImg.style.transform = `scale(${zoomLevel})`;
+  }
 }
 
 zoomInBtn.addEventListener("click", () => {
   zoomLevel = Math.min(zoomLevel + 0.3, 3);
-  lightboxImg.style.transform = `scale(${zoomLevel})`;
+  updateZoomTransform();
 });
 
 zoomOutBtn.addEventListener("click", () => {
   zoomLevel = Math.max(zoomLevel - 0.3, 0.5);
-  lightboxImg.style.transform = `scale(${zoomLevel})`;
+  updateZoomTransform();
 });
 
 resetZoomBtn.addEventListener("click", () => {
   zoomLevel = 1;
-  lightboxImg.style.transform = "scale(1)";
+  updateZoomTransform();
+});
+
+lightboxImg.addEventListener("mousemove", (e) => {
+  if (zoomLevel === 1) return;
+  
+  const rect = lightboxImg.getBoundingClientRect();
+  const x = ((e.clientX - rect.left) / rect.width) * 100;
+  const y = ((e.clientY - rect.top) / rect.height) * 100;
+  
+  zoomOriginX = Math.max(0, Math.min(100, x));
+  zoomOriginY = Math.max(0, Math.min(100, y));
+  
+  updateZoomTransform();
 });
 
 document.addEventListener("keydown", (e) => {
