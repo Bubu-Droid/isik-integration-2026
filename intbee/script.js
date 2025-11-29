@@ -1,4 +1,3 @@
-// your code goes here
 // Canvas Animation - Hexagonal Bee Pattern & Calculus Symbols
 const canvas = document.getElementById("canvas3d");
 const ctx = canvas.getContext("2d");
