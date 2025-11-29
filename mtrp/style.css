@@ -783,6 +783,80 @@ position: relative;
   background: var(--bg-secondary);
 }
 
+/* Poster Section */
+.poster-section {
+    padding: 80px 20px;
+    z-index: 10;
+    position: relative;
+    background: var(--bg-primary); /* Use primary background for contrast */
+}
+
+.poster-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* Poster Container */
+.poster-placeholder {
+    background: var(--bg-card);
+    border: 3px dashed var(--border-color);
+    border-radius: 20px;
+    padding: 60px 80px; /* Merged padding from your lines */
+    text-align: center;
+    backdrop-filter: blur(10px);
+    margin: 40px auto 100px auto; /* Corrected centering and spacing */
+    transition: all 0.4s ease;
+    width: fit-content;
+}
+
+.poster-placeholder:hover {
+    border-color: var(--accent-primary);
+    background: rgba(124, 77, 255, 0.05); /* Adjusted to use var(--accent-primary) color */
+}
+
+.poster-placeholder img {
+    width: 100%;
+    height: auto;
+    max-width: 500px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.poster-placeholder:hover img {
+    transform: scale(1.02);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.7);
+}
+
+.poster-container {
+    text-align: center;
+    margin: 40px 0;
+}
+.poster-btn {
+    display: inline-block;
+    padding: 14px 35px;
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    color: var(--text-primary);
+    /* Using accent-primary for consistency */
+    background: rgba(124, 77, 255, 0.15); 
+    border: 2px solid var(--accent-primary);
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.poster-btn:hover {
+    /* Using accent-primary for consistency */
+    background: rgba(124, 77, 255, 0.25); 
+    color: var(--text-primary); /* Ensure text remains visible */
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px var(--shadow-color);
+}
+
 .section-content {
   max-width: 1200px;
   margin: 0 auto;
