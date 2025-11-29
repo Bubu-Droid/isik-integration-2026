@@ -97,24 +97,6 @@ document.querySelectorAll(".page-section").forEach((section) => {
   observer.observe(section);
 });
 
-// Parallax effect for hero section
-window.addEventListener(
-  "scroll",
-  () => {
-    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-    const hero = document.querySelector(".hero");
-
-    if (hero) {
-      const heroHeight = hero.offsetHeight;
-      if (scrollTop < heroHeight) {
-        hero.style.transform = `translateY(${scrollTop * 0.1}px)`;
-        hero.style.opacity = 1 - (scrollTop / heroHeight) * 0.1;
-      }
-    }
-  },
-  { passive: true },
-);
-
 // Add ripple effect to buttons
 document.querySelectorAll(".btn-hero, .poster-btn").forEach((button) => {
   button.addEventListener("click", function (e) {

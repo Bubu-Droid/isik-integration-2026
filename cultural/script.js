@@ -89,24 +89,6 @@ document.querySelectorAll(".page-section").forEach((section) => {
   observer.observe(section);
 });
 
-// Parallax effect for hero section
-window.addEventListener(
-  "scroll",
-  () => {
-    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-    const hero = document.querySelector(".hero-small");
-
-    if (hero) {
-      const heroHeight = hero.offsetHeight;
-      if (scrollTop < heroHeight) {
-        hero.style.transform = `translateY(${scrollTop * 0.5}px)`;
-        hero.style.opacity = 1 - scrollTop / heroHeight;
-      }
-    }
-  },
-  { passive: true },
-);
-
 // Add hover effect to feature cards
 document.querySelectorAll(".feature-card").forEach((card) => {
   card.addEventListener("mouseenter", function () {

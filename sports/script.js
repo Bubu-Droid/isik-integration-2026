@@ -99,24 +99,6 @@ document.querySelectorAll(".poster-btn").forEach((btn) => {
   });
 });
 
-// Parallax effect
-window.addEventListener(
-  "scroll",
-  () => {
-    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-    const hero = document.querySelector(".hero-small");
-
-    if (hero) {
-      const heroHeight = hero.offsetHeight;
-      if (scrollTop < heroHeight) {
-        hero.style.transform = `translateY(${scrollTop * 0.5}px)`;
-        hero.style.opacity = 1 - scrollTop / heroHeight;
-      }
-    }
-  },
-  { passive: true },
-);
-
 // Image lazy loading with fade-in effect
 const imageObserver = new IntersectionObserver(
   (entries) => {
