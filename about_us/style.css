@@ -2,19 +2,6 @@
 
 /* --- 1. THEME VARIABLES (Dark and Light) --- */
 :root {
-    /* DARK THEME (Default) - Based on Integration Fest Neon/Tech Aesthetic */
-    --theme-bg: rgba(15, 5, 25, 0.6);
-    --theme-text: #e8eaf6;
-    --theme-card-bg: rgba(10, 10, 10, 0.5);
-    
-    --accent-primary: #667eea; /* Quantum Blue */
-    --accent-secondary: #f093fb; /* Neon Pink */
-
-    --status-success: #00e676; 
-    --status-warning: #ff9800;
-}
-
-.light-theme {
     /* LIGHT THEME (Toggle) - High Contrast & Warm */
     --theme-bg: #0a0015;
     --theme-text: #1a1a1a;
@@ -25,6 +12,19 @@
     
     --status-success: #388e3c; 
     --status-warning: #d32f2f;
+}
+
+.dark-theme {
+    /* DARK THEME (Default) - Based on Integration Fest Neon/Tech Aesthetic */
+    --theme-bg: rgba(15, 5, 25, 0.6);
+    --theme-text: #e8eaf6;
+    --theme-card-bg: rgba(10, 10, 10, 0.5);
+    
+    --accent-primary: #667eea; /* Quantum Blue */
+    --accent-secondary: #f093fb; /* Neon Pink */
+
+    --status-success: #00e676; 
+    --status-warning: #ff9800;
 }
 
 
@@ -188,3 +188,4 @@ input:checked + .slider:before {
 .status-success { color: var(--status-success); text-shadow: 0 0 5px var(--status-success); }
 
 .status-warning { color: var(--status-warning); text-shadow: 0 0 5px var(--status-warning); }
+
