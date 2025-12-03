@@ -3,7 +3,7 @@
 /* --- 1. THEME VARIABLES (Dark and Light) --- */
 :root {
     /* DARK THEME (Default) - Based on Integration Fest Neon/Tech Aesthetic */
-    --theme-bg: #0a0a0a;
+    --theme-bg: rgba(15, 5, 25, 0.6);
     --theme-text: #e8eaf6;
     --theme-card-bg: rgba(10, 10, 10, 0.5);
     
@@ -16,7 +16,7 @@
 
 .light-theme {
     /* LIGHT THEME (Toggle) - High Contrast & Warm */
-    --theme-bg: #f0f0f0;
+    --theme-bg: #0a0015;
     --theme-text: #1a1a1a;
     --theme-card-bg: rgba(255, 255, 255, 0.75);
 
@@ -186,4 +186,5 @@ input:checked + .slider:before {
 }
 
 .status-success { color: var(--status-success); text-shadow: 0 0 5px var(--status-success); }
+
 .status-warning { color: var(--status-warning); text-shadow: 0 0 5px var(--status-warning); }
