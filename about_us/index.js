@@ -48,7 +48,7 @@
       <div class="quantum-node" data-node-id="0">
         <div class="node-profile">
           <div class="node-img-container">
-            <img src="https://placehold.co/100x100/1a1a1a/FFF?text=DEV1" alt="Arjun Das" class="node-img">
+            <img src="https://placehold.co/100x100/1a1a1a/FFF?text=DEV1" alt="Jishnu Ray Chaudhuri" class="node-img">
           </div>
           <div><h3 class="node-name">Arjun Das</h3><p class="node-tag">Pipeline Architect</p></div>
         </div>
@@ -61,7 +61,7 @@
       <div class="quantum-node" data-node-id="1">
         <div class="node-profile">
           <div class="node-img-container">
-            <img src="https://placehold.co/100x100/1a1a1a/FFF?text=DEV2" alt="Sneha Roy" class="node-img">
+            <img src="https://placehold.co/100x100/1a1a1a/FFF?text=DEV2" alt="Avigyan Chakraborty" class="node-img">
           </div>
           <div><h3 class="node-name">Sneha Roy</h3><p class="node-tag">Runtime Specialist</p></div>
         </div>
@@ -74,7 +74,7 @@
       <div class="quantum-node" data-node-id="2">
         <div class="node-profile">
           <div class="node-img-container">
-            <img src="https://placehold.co/100x100/1a1a1a/FFF?text=DEV3" alt="Rohan Mehta" class="node-img">
+            <img src="https://placehold.co/100x100/1a1a1a/FFF?text=DEV3" alt="Anant Raj" class="node-img">
           </div>
           <div><h3 class="node-name">Rohan Mehta</h3><p class="node-tag">Monitoring Engineer</p></div>
         </div>
@@ -87,7 +87,7 @@
       <div class="quantum-node" data-node-id="3">
         <div class="node-profile">
           <div class="node-img-container">
-            <img src="https://placehold.co/100x100/1a1a1a/FFF?text=DEV4" alt="Liam Chen" class="node-img">
+            <img src="https://placehold.co/100x100/1a1a1a/FFF?text=DEV4" alt="Tanmay Rai" class="node-img">
           </div>
           <div><h3 class="node-name">Liam Chen</h3><p class="node-tag">Security Engineer</p></div>
         </div>
@@ -110,4 +110,5 @@
 
   <script src="quantum-web.js"></script>
 </body>
+
 </html>
