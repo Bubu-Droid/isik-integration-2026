@@ -6,7 +6,7 @@
     <title>About Us | Integration Fest</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body class="light-mode">
+<body class="light-theme">
     
     <div class="bg-pattern">
         <div class="shape shape-1"></div>
@@ -52,17 +52,11 @@
                 <li class="nav-item dropdown">
                     <span class="nav-link dropdown-toggle">About ▾</span>
                     <ul class="dropdown-menu">
-                        <li><a href="#our-team" class="dropdown-link">Our Team</a></li>
+                        <li><a href="/about/" class="dropdown-link">Our Team</a></li>
                         <li><a href="/#footer-tabs" class="dropdown-link about-dropdown">Venue</a></li>
                         <li><a href="/#footer-tabs" class="dropdown-link about-dropdown">Sponsors</a></li>
                         <li><a href="/#footer-tabs" class="dropdown-link about-dropdown">Contact</a></li>
                     </ul>
-                </li>
-                <li class="nav-item theme-toggle-nav">
-                    <button class="theme-toggle-btn" id="themeToggle" aria-label="Toggle theme">
-                        <span class="sun-icon">☀️</span>
-                        <span class="moon-icon">🌙</span>
-                    </button>
                 </li>
             </ul>
         </div>
@@ -75,7 +69,7 @@
             <p class="header-subtitle">Building the future of tech fest excellence</p>
         </header>
 
-        <div id="our-team" class="node-grid">
+        <div class="node-grid">
             <div class="flow-node">
                 <div class="node-profile">
                     <div class="node-img-container">
@@ -156,6 +150,18 @@
                 </div>
             </div>
         </div>
+    </div>
+    
+    <!-- Theme Toggle Button -->
+    <div class="theme-toggle" id="themeToggle" title="Toggle Theme">
+        <div class="toggle-circle">
+            <span class="toggle-icon">☀️</span>
+        </div>
+    </div>
+
+    <!-- Theme Notification -->
+    <div class="theme-notification" id="themeNotification">
+        <span class="notification-text">Light Mode Activated</span>
     </div>
 
     <section class="footer-section">
