@@ -1,27 +1,84 @@
 document.addEventListener('DOMContentLoaded', () => {
     const nodes = document.querySelectorAll('.flow-node');
-    const themeToggle = document.getElementById('themeToggle');
     const body = document.body;
     const navToggle = document.getElementById('navToggle');
     const navMenu = document.getElementById('navMenu');
     const dropdowns = document.querySelectorAll('.dropdown');
+    const themeToggleBtn = document.getElementById('themeToggle');
+    const themeNotification = document.getElementById('themeNotification');
+
+    // Check for saved theme preference or default to light theme
+    const savedTheme = localStorage.getItem('theme') || 'light-theme';
+    body.classList.remove('light-theme', 'dark-theme');
+    body.classList.add(savedTheme);
+
+    // Set initial icon based on saved theme
+    if (themeToggleBtn) {
+        const icon = themeToggleBtn.querySelector('.toggle-icon');
+        icon.textContent = savedTheme === 'dark-theme' ? '☀️' : '🌙';
+    }
+
+    // Theme toggle button click handler
+    if (themeToggleBtn) {
+        themeToggleBtn.addEventListener('click', function() {
+            const isDarkMode = body.classList.contains('dark-theme');
+            
+            // Toggle theme
+            body.classList.remove('light-theme', 'dark-theme');
+            
+            if (isDarkMode) {
+                body.classList.add('light-theme');
+                localStorage.setItem('theme', 'light-theme');
+                if (themeNotification) {
+                    themeNotification.querySelector('.notification-text').textContent = 'Light Mode Activated';
+                    themeNotification.classList.add('show');
+                }
+            } else {
+                body.classList.add('dark-theme');
+                localStorage.setItem('theme', 'dark-theme');
+                if (themeNotification) {
+                    themeNotification.querySelector('.notification-text').textContent = 'Dark Mode Activated';
+                    themeNotification.classList.add('show');
+                }
+            }
+            
+            // Auto hide notification after 3 seconds
+            if (themeNotification) {
+                setTimeout(() => {
+                    themeNotification.classList.remove('show');
+                }, 3000);
+            }
+            
+            // Animate toggle button
+            themeToggleBtn.classList.add('dark');
+            setTimeout(() => {
+                themeToggleBtn.classList.remove('dark');
+            }, 600);
+            
+            // Update icon
+            const icon = themeToggleBtn.querySelector('.toggle-icon');
+            icon.textContent = isDarkMode ? '☀️' : '🌙';
+        });
+    }
 
     // Title glitch effect
     const title = document.querySelector('.master-title');
-    const originalText = title.textContent;
-    const glitchChars = '!<>-_\\/[]{}—=+*^?#________';
-    
-    function glitchText() {
-        if (Math.random() > 0.95) {
-            let glitched = '';
-            for (let i = 0; i < originalText.length; i++) {
-                glitched += Math.random() > 0.9 ? glitchChars[Math.floor(Math.random() * glitchChars.length)] : originalText[i];
+    if (title) {
+        const originalText = title.textContent;
+        const glitchChars = '!<>-_\\/[]{}—=+*^?#________';
+        
+        function glitchText() {
+            if (Math.random() > 0.95) {
+                let glitched = '';
+                for (let i = 0; i < originalText.length; i++) {
+                    glitched += Math.random() > 0.9 ? glitchChars[Math.floor(Math.random() * glitchChars.length)] : originalText[i];
+                }
+                title.textContent = glitched;
+                setTimeout(() => { title.textContent = originalText; }, 50);
             }
-            title.textContent = glitched;
-            setTimeout(() => { title.textContent = originalText; }, 50);
         }
+        setInterval(glitchText, 3000);
     }
-    setInterval(glitchText, 3000);
 
     // Parallax scroll effect
     let ticking = false;
@@ -42,11 +99,11 @@ document.addEventListener('DOMContentLoaded', () => {
     // Node hover effects
     nodes.forEach(node => {
         const quote = node.querySelector('.data-pulse p:first-child');
-        const originalQuote = quote.textContent;
+        const originalQuote = quote ? quote.textContent : '';
         let typeInterval;
         
         node.addEventListener('mouseenter', () => {
-            if (window.innerWidth > 768) {
+            if (window.innerWidth > 768 && quote) {
                 let index = 0;
                 quote.textContent = '';
                 typeInterval = setInterval(() => {
@@ -60,7 +117,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
         
         node.addEventListener('mouseleave', () => {
-            if (window.innerWidth > 768) {
+            if (window.innerWidth > 768 && quote) {
                 clearInterval(typeInterval);
                 quote.textContent = originalQuote;
             }
@@ -69,13 +126,10 @@ document.addEventListener('DOMContentLoaded', () => {
         // Ripple effect on click
         node.addEventListener('click', (e) => {
             const ripple = document.createElement('div');
-            const isDark = body.classList.contains('dark-mode');
-            const rippleColor = isDark ? 'rgba(102, 126, 234, 0.5)' : 'rgba(75, 110, 242, 0.5)';
-            
             ripple.style.cssText = `
                 position: absolute;
                 border-radius: 50%;
-                background: radial-gradient(circle, ${rippleColor} 0%, transparent 70%);
+                background: radial-gradient(circle, rgba(255, 140, 0, 0.5) 0%, transparent 70%);
                 width: 20px;
                 height: 20px;
                 left: ${e.clientX - node.getBoundingClientRect().left - 10}px;
@@ -87,25 +141,6 @@ document.addEventListener('DOMContentLoaded', () => {
             setTimeout(() => ripple.remove(), 600);
         });
     });
-
-    // Theme toggle with day/night icons
-    if (themeToggle) {
-        themeToggle.addEventListener('click', () => {
-            if (body.classList.contains('light-mode')) {
-                body.classList.remove('light-mode');
-                body.classList.add('dark-mode');
-            } else {
-                body.classList.remove('dark-mode');
-                body.classList.add('light-mode');
-            }
-            
-            // Add scale animation to button
-            themeToggle.style.transform = 'scale(1.2) rotate(360deg)';
-            setTimeout(() => { 
-                themeToggle.style.transform = ''; 
-            }, 300);
-        });
-    }
 
     // Mobile menu toggle
     if (navToggle) {
@@ -131,9 +166,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Mobile dropdown handling
     dropdowns.forEach(dropdown => {
-        const toggle = dropdown.querySelector('.dropdown-toggle');
-        if (toggle) {
-            toggle.addEventListener('click', (e) => {
+        const dropdownToggle = dropdown.querySelector('.dropdown-toggle');
+        if (dropdownToggle) {
+            dropdownToggle.addEventListener('click', (e) => {
                 if (window.innerWidth <= 768) {
                     e.preventDefault();
                     e.stopPropagation();
@@ -189,22 +224,5 @@ document.addEventListener('DOMContentLoaded', () => {
                 dropdown.classList.remove('active');
             });
         }
-    });
-
-    // Smooth scroll for anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            const href = this.getAttribute('href');
-            if (href !== '#' && href !== '') {
-                e.preventDefault();
-                const target = document.querySelector(href);
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            }
-        });
     });
 });
