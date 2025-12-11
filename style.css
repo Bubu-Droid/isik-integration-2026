@@ -124,7 +124,7 @@ body.light-mode {
 }
 
 body {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Inter", "Segoe UI", Tahoma, sans-serif;
   overflow-x: hidden;
   background: var(--bg-black);
   color: var(--fg);

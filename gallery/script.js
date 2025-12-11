@@ -385,18 +385,18 @@ function updateLightboxImage() {
   isDragging = false;
   lightboxImg.style.transform = "scale(1)";
   lightboxImg.style.transformOrigin = "center center";
-  lightboxImg.style.cursor = 'zoom-in';
+  lightboxImg.style.cursor = "zoom-in";
 }
 
 function updateZoomTransform() {
   if (zoomLevel === 1) {
     lightboxImg.style.transform = "scale(1)";
     lightboxImg.style.transformOrigin = "center center";
-    lightboxImg.style.cursor = 'zoom-in';
+    lightboxImg.style.cursor = "zoom-in";
   } else {
     lightboxImg.style.transformOrigin = `${zoomOriginX}% ${zoomOriginY}%`;
     lightboxImg.style.transform = `scale(${zoomLevel})`;
-    lightboxImg.style.cursor = isDragging ? 'grabbing' : 'grab';
+    lightboxImg.style.cursor = isDragging ? "grabbing" : "grab";
   }
 }
 
@@ -417,54 +417,63 @@ resetZoomBtn.addEventListener("click", () => {
 
 lightboxImg.addEventListener("mousemove", (e) => {
   if (zoomLevel === 1) return;
-  
+
   const rect = lightboxImg.getBoundingClientRect();
   const x = ((e.clientX - rect.left) / rect.width) * 100;
   const y = ((e.clientY - rect.top) / rect.height) * 100;
-  
+
   zoomOriginX = Math.max(0, Math.min(100, x));
   zoomOriginY = Math.max(0, Math.min(100, y));
-  
+
   updateZoomTransform();
 });
 
 lightboxImg.addEventListener("touchstart", (e) => {
   if (zoomLevel === 1) return;
-  
+
   e.preventDefault();
   isDragging = true;
   const touch = e.touches[0];
   lastTouchX = touch.clientX;
   lastTouchY = touch.clientY;
-  
-  lightboxImg.style.cursor = 'grabbing';
+
+  lightboxImg.style.cursor = "grabbing";
 });
 
 lightboxImg.addEventListener("touchmove", (e) => {
   if (!isDragging || zoomLevel === 1) return;
-  
+
   e.preventDefault();
   const touch = e.touches[0];
   const deltaX = touch.clientX - lastTouchX;
   const deltaY = touch.clientY - lastTouchY;
-  
-  zoomOriginX = Math.max(0, Math.min(100, zoomOriginX - (deltaX / lightboxImg.clientWidth) * 100 * 0.5));
-  zoomOriginY = Math.max(0, Math.min(100, zoomOriginY - (deltaY / lightboxImg.clientHeight) * 100 * 0.5));
-  
+
+  zoomOriginX = Math.max(
+    0,
+    Math.min(100, zoomOriginX - (deltaX / lightboxImg.clientWidth) * 100 * 0.5),
+  );
+  zoomOriginY = Math.max(
+    0,
+    Math.min(
+      100,
+      zoomOriginY - (deltaY / lightboxImg.clientHeight) * 100 * 0.5,
+    ),
+  );
+
   updateZoomTransform();
-  
+
   lastTouchX = touch.clientX;
   lastTouchY = touch.clientY;
 });
 
 lightboxImg.addEventListener("touchend", () => {
   isDragging = false;
-  lightboxImg.style.cursor = zoomLevel === 1 ? 'zoom-in' : 'grab';
+  lightboxImg.style.cursor = zoomLevel === 1 ? "zoom-in" : "grab";
 });
 
 lightboxImg.addEventListener("touchcancel", () => {
   isDragging = false;
-  lightboxImg.style.cursor = zoomLevel === 1 ? 'zoom-in' : 'grab';
+  lightboxImg.style.cursor = zoomLevel === 1 ? "zoom-in" : "grab";
 });
 
 document.addEventListener("keydown", (e) => {
