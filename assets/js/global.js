@@ -11,6 +11,9 @@ const currentTheme = localStorage.getItem("theme") || "light";
 if (currentTheme === "light") {
   document.body.classList.add("light-mode");
   toggleIcon.textContent = "☀️";
+} else {
+  document.body.classList.remove("light-mode");
+  toggleIcon.textContent = "🌙";
 }
 
 themeToggle.addEventListener("click", () => {
@@ -18,9 +21,11 @@ themeToggle.addEventListener("click", () => {
 
   if (document.body.classList.contains("light-mode")) {
     toggleIcon.textContent = "☀️";
+    localStorage.setItem("theme", "light");
     showNotification("Light mode activated! ☀️");
   } else {
     toggleIcon.textContent = "🌙";
+    localStorage.setItem("theme", "dark");
     showNotification("Dark mode activated! 🌙");
   }
 });
