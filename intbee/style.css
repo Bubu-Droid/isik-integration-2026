@@ -408,7 +408,7 @@ body.light-mode #canvas3d {
   transition: background 0.4s ease;
 }
 
-.alt-bg {
+.page-section:nth-child(2n-1) {
   background: var(--bg-secondary);
 }
 
