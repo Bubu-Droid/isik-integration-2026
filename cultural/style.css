@@ -585,21 +585,21 @@ body.light-mode #canvas3d {
   overflow: hidden;
 }
 
-.info-card::after {
-  content: "";
-  position: absolute;
-  top: -50%;
-  right: -50%;
-  width: 200%;
-  height: 200%;
-  background: radial-gradient(
-    circle,
-    rgba(138, 43, 226, 0.1) 0%,
-    transparent 70%
-  );
-  opacity: 0;
-  transition: opacity 0.5s ease;
-}
+/* .info-card::after { */
+/*   content: ""; */
+/*   position: absolute; */
+/*   top: -50%; */
+/*   right: -50%; */
+/*   width: 200%; */
+/*   height: 200%; */
+/*   background: radial-gradient( */
+/*     circle, */
+/*     rgba(138, 43, 226, 0.1) 0%, */
+/*     transparent 70% */
+/*   ); */
+/*   opacity: 0; */
+/*   transition: opacity 0.5s ease; */
+/* } */
 
 .info-card:hover::after {
   opacity: 1;
@@ -1043,6 +1043,14 @@ body.light-mode .registration-box {
 }
 
 /* Mobile Responsive */
+@media (max-width: 1130px) {
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(334px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+  }
+}
 @media (max-width: 768px) {
   .hero-small {
     padding: 120px 20px 40px;
