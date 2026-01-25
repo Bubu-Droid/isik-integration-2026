@@ -1,4 +1,3 @@
-// your code goes here
 // Canvas Animation - Hexagonal Bee Pattern & Calculus Symbols
 const canvas = document.getElementById("canvas3d");
 const ctx = canvas.getContext("2d");
@@ -341,17 +340,6 @@ document.querySelectorAll(".date-card").forEach((card) => {
   dateObserver.observe(card);
 });
 
-// // Welcome message on first visit
-// const welcomeShown = sessionStorage.getItem("intbeeWelcomeShown");
-// if (!welcomeShown) {
-//   setTimeout(() => {
-//     showNotification(
-//       "🐝 Welcome to Integration Bee 2026! Let's Get In-credible! 📐",
-//     );
-//     sessionStorage.setItem("intbeeWelcomeShown", "true");
-//   }, 1000);
-// }
-
 // Add honeycomb pattern animation on hover for hexagons
 canvas.addEventListener("mousemove", (e) => {
   const mouseX = e.clientX;
@@ -467,7 +455,7 @@ function createParticleBurst(x, y) {
   animateBurst();
 }
 
-// Add particle burst on registration button hover
+// Add particle burst on registration section hover
 const registerSection = document.querySelector("#register");
 if (registerSection) {
   registerSection.addEventListener("mouseenter", () => {
