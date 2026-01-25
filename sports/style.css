@@ -304,6 +304,10 @@ body.light-mode #canvas3d {
   transition: background 0.5s ease;
 }
 
+.page-section:nth-child(2n) {
+  background: var(--bg-secondary);
+}
+
 .alt-bg {
   background: var(--bg-secondary);
 }
@@ -325,6 +329,23 @@ body.light-mode #canvas3d {
 .event-icon {
   font-size: 3rem;
   animation: bounce 2s infinite;
+}
+
+.poster-title {
+  font-size: 2rem;
+  font-weight: 800;
+  background: linear-gradient(
+    135deg,
+    var(--accent-primary),
+    var(--accent-secondary)
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-align: center;
+  margin-bottom: 50px;
+  margin-top: 50px;
+  letter-spacing: 1px;
 }
 
 .section-title {
@@ -387,6 +408,7 @@ body.light-mode #canvas3d {
   border-left: 3px solid var(--accent-primary);
   border-radius: 8px;
   margin-bottom: 40px;
+  margin-top: 40px;
   backdrop-filter: blur(10px);
   transition: all 0.5s ease;
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);

@@ -89,16 +89,6 @@ document.querySelectorAll(".page-section").forEach((section) => {
   observer.observe(section);
 });
 
-// Poster button notification
-document.querySelectorAll(".poster-btn").forEach((btn) => {
-  btn.addEventListener("click", (e) => {
-    e.preventDefault();
-    showNotification(
-      "📢 Posters will be released soon! Stay tuned for updates!",
-    );
-  });
-});
-
 // Image lazy loading with fade-in effect
 const imageObserver = new IntersectionObserver(
   (entries) => {

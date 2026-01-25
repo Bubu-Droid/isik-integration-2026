@@ -385,11 +385,19 @@ body.light-mode #canvas3d {
   animation: fadeInUp 1s ease 0.6s both;
   position: relative;
   overflow: hidden;
+  margin: 10px 20px;
 }
 
 .btn-hero:hover {
   transform: translateY(-5px);
   box-shadow: 0 15px 45px var(--shadow-color);
+}
+
+.quick-link-btns {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
 /* Page Sections */
@@ -400,7 +408,7 @@ body.light-mode #canvas3d {
   transition: background 0.4s ease;
 }
 
-.alt-bg {
+.page-section:nth-child(2n-1) {
   background: var(--bg-secondary);
 }
 
