@@ -474,7 +474,7 @@ body.light-mode #canvas3d {
 }
 
 .winner-item.position-1 .position-badge {
-  background: linear-gradient(135deg, #FFD700, #FFA500);
+  background: linear-gradient(135deg, #ffd700, #ffa500);
   color: #1a0033;
   font-weight: 800;
 }
@@ -489,7 +489,7 @@ body.light-mode #canvas3d {
 }
 
 .winner-item.position-2 .position-badge {
-  background: linear-gradient(135deg, #C0C0C0, #A8A8A8);
+  background: linear-gradient(135deg, #c0c0c0, #a8a8a8);
   color: #1a0033;
   font-weight: 800;
 }
@@ -504,7 +504,7 @@ body.light-mode #canvas3d {
 }
 
 .winner-item.position-3 .position-badge {
-  background: linear-gradient(135deg, #CD7F32, #B87333);
+  background: linear-gradient(135deg, #cd7f32, #b87333);
   color: white;
   font-weight: 800;
 }
@@ -519,7 +519,11 @@ body.light-mode #canvas3d {
 }
 
 .winner-item.honorable-mention .position-badge {
-  background: linear-gradient(135deg, var(--accent-secondary), var(--accent-tertiary));
+  background: linear-gradient(
+    135deg,
+    var(--accent-secondary),
+    var(--accent-tertiary)
+  );
   color: white;
   font-weight: 700;
 }
@@ -961,6 +965,10 @@ body.light-mode #canvas3d {
   margin-bottom: 100px !important;
 }
 
+#btl-result {
+  margin-top: 80px !important;
+}
+
 .poster-container {
   text-align: center;
   margin: 40px 0;
@@ -1335,36 +1343,36 @@ body.light-mode .registration-box {
   .footer-text {
     font-size: 1rem;
   }
-  
+
   .winners-section {
     padding: 25px;
   }
-  
+
   .winners-category-title {
     font-size: 1.6rem;
   }
-  
+
   .winners-list-container {
     gap: 15px;
   }
-  
+
   .winner-item {
     flex-direction: column;
     align-items: flex-start;
     gap: 15px;
     padding: 20px;
   }
-  
+
   .position-badge {
     min-width: 90px;
     font-size: 0.85rem;
     padding: 6px 14px;
   }
-  
+
   .winner-name {
     font-size: 1.1rem;
   }
-  
+
   .winners-image-container {
     padding: 15px;
   }
@@ -1387,7 +1395,8 @@ body.light-mode .registration-box {
     padding: 12px 25px;
     font-size: 0.9rem;
   }
-}:root {
+}
+:root {
   color-scheme: dark;
 
   --bg-primary: #0a0015;
@@ -1863,7 +1872,7 @@ body.light-mode #canvas3d {
 }
 
 .winner-item.position-1 .position-badge {
-  background: linear-gradient(135deg, #FFD700, #FFA500);
+  background: linear-gradient(135deg, #ffd700, #ffa500);
   color: #1a0033;
   font-weight: 800;
 }
@@ -1878,7 +1887,7 @@ body.light-mode #canvas3d {
 }
 
 .winner-item.position-2 .position-badge {
-  background: linear-gradient(135deg, #C0C0C0, #A8A8A8);
+  background: linear-gradient(135deg, #c0c0c0, #a8a8a8);
   color: #1a0033;
   font-weight: 800;
 }
@@ -1893,7 +1902,7 @@ body.light-mode #canvas3d {
 }
 
 .winner-item.position-3 .position-badge {
-  background: linear-gradient(135deg, #CD7F32, #B87333);
+  background: linear-gradient(135deg, #cd7f32, #b87333);
   color: white;
   font-weight: 800;
 }
@@ -1908,7 +1917,11 @@ body.light-mode #canvas3d {
 }
 
 .winner-item.honorable-mention .position-badge {
-  background: linear-gradient(135deg, var(--accent-secondary), var(--accent-tertiary));
+  background: linear-gradient(
+    135deg,
+    var(--accent-secondary),
+    var(--accent-tertiary)
+  );
   color: white;
   font-weight: 700;
 }
@@ -2724,36 +2737,36 @@ body.light-mode .registration-box {
   .footer-text {
     font-size: 1rem;
   }
-  
+
   .winners-section {
     padding: 25px;
   }
-  
+
   .winners-category-title {
     font-size: 1.6rem;
   }
-  
+
   .winners-list-container {
     gap: 15px;
   }
-  
+
   .winner-item {
     flex-direction: column;
     align-items: flex-start;
     gap: 15px;
     padding: 20px;
   }
-  
+
   .position-badge {
     min-width: 90px;
     font-size: 0.85rem;
     padding: 6px 14px;
   }
-  
+
   .winner-name {
     font-size: 1.1rem;
   }
-  
+
   .winners-image-container {
     padding: 15px;
   }
