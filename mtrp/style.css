@@ -1144,6 +1144,7 @@ body.light-mode #canvas3d {
   margin-bottom: 8px;
   background: rgba(124, 77, 255, 0.08);
   border-radius: 8px;
+  gap: 50%;
 }
 
 .detail-label {
@@ -1341,5 +1342,11 @@ body.light-mode #canvas3d {
 
   .registration-box {
     padding: 30px 20px;
+  }
+}
+
+@media (max-width: 450px) {
+  .detail-row {
+    gap: 20%;
   }
 }
