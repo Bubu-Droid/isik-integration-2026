@@ -304,7 +304,7 @@ body.light-mode #canvas3d {
   transition: background 0.5s ease;
 }
 
-.page-section:nth-child(2n) {
+.page-section:nth-child(2n-1) {
   background: var(--bg-secondary);
 }
 
@@ -502,6 +502,10 @@ body.light-mode .registration-box {
   border-color: rgba(255, 87, 34, 0.5);
   transform: translateY(-5px);
   box-shadow: 0 10px 30px var(--shadow-color);
+}
+
+.poster-placeholder {
+  margin-bottom: 100px !important;
 }
 
 /* Footer */
