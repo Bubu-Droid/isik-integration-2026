@@ -724,6 +724,40 @@ body.light-mode #canvas3d {
   margin: 10px 20px;
 }
 
+.important-notice {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 215, 64, 0.15),
+    rgba(255, 160, 0, 0.1)
+  );
+  border: 2px solid var(--accent-gold);
+  border-radius: 15px;
+  padding: 20px 30px;
+  margin-bottom: 30px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 10px 30px rgba(255, 215, 64, 0.15);
+}
+
+.important-notice strong {
+  color: var(--accent-gold);
+  font-size: 1.25rem;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.important-notice a {
+  color: var(--text-primary);
+  font-weight: 600;
+  text-decoration: none;
+  border-bottom: 1px dashed var(--accent-gold);
+  transition: all 0.3s ease;
+}
+
+.important-notice a:hover {
+  color: var(--accent-gold);
+  border-bottom: 1px solid var(--accent-gold);
+}
+
 /* Register Now Button - Deep Purple/Indigo gradient */
 .btn-register {
   background: linear-gradient(135deg, #6d28d9, #4338ca);
