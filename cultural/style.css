@@ -2579,6 +2579,59 @@ body.light-mode .registration-box {
   margin-top: 20px;
 }
 
+/* Winners Gallery Styling */
+.winners-section {
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+
+.winners-section .features-grid {
+  display: flex;
+  flex-direction: column;
+}
+
+.winners-section .feature-card {
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+  background: rgba(255, 255, 255, 0.05); /* Subtle background contrast */
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.winners-section .feature-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.winners-section .feature-desc strong {
+  font-size: 2rem;
+  margin-top: 40px;
+}
+
+.winners-section .feature-desc {
+  text-align: center;
+}
+
+.winner-image img {
+  width: 100%;
+  aspect-ratio: 4 / 3; /* Keeps all winning photos the same size */
+  object-fit: contain; /* Prevents stretching */
+  border-radius: 6px;
+  display: block;
+}
+
+/* Special styling for 1st Place */
+/* .winners-section .feature-card:first-child { */
+/*   border: 1px solid #ffd700; /* Gold Border */
+. */
+/*   background: linear-gradient(145deg, rgba(255, 215, 0, 0.05), rgba(0, 0, 0, 0)); */
+/* } */
+/**/
+/* .winners-section .feature-card:first-child .feature-title { */
+/*   color: #ffd700; */
+/*   font-weight: bold; */
+/* } */
+
 /* Animations */
 @keyframes float {
   0%,
@@ -2769,6 +2822,11 @@ body.light-mode .registration-box {
 
   .winners-image-container {
     padding: 15px;
+  }
+
+  .winners-section .features-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
   }
 }
 
