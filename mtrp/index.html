@@ -87,19 +87,36 @@
       <div class="results-banner">
         <div class="results-banner-header">
           <span class="results-trophy">🏆</span>
-          <strong>Results Are Out!</strong>
+          <strong>All Results Are Out!</strong>
           <span class="results-trophy">🏆</span>
         </div>
-        <p class="results-banner-sub">Offline examination results have been declared. Check your result below.</p>
+        <p class="results-banner-sub">Both Offline and Online examination results have been declared. Check your result below.</p>
+
+        <!-- Offline Results Row -->
+        <p class="results-mode-label">📍 Offline Results</p>
         <div class="results-btn-row">
           <a href="/assets/files/mtrp/mtrp_subjunior_offline_result.pdf" target="_blank" class="result-btn result-btn-subjunior">
-            📄 Sub-Junior Results
+            📄 Sub-Junior
           </a>
           <a href="/assets/files/mtrp/mtrp_junior_offline_result.pdf" target="_blank" class="result-btn result-btn-junior">
-            📄 Junior Results
+            📄 Junior
           </a>
           <a href="/assets/files/mtrp/mtrp_senior_offline_result.pdf" target="_blank" class="result-btn result-btn-senior">
-            📄 Senior Results
+            📄 Senior
+          </a>
+        </div>
+
+        <!-- Online Results Row -->
+        <p class="results-mode-label results-mode-label-online">💻 Online Results</p>
+        <div class="results-btn-row">
+          <a href="/assets/files/mtrp/mtrp___subjunior_online_result.pdf" target="_blank" class="result-btn result-btn-subjunior-online">
+            📄 Sub-Junior
+          </a>
+          <a href="/assets/files/mtrp/mtrp____junior_online____result.pdf" target="_blank" class="result-btn result-btn-junior-online">
+            📄 Junior
+          </a>
+          <a href="/assets/files/mtrp/mtrp___senior_online_result.pdf" target="_blank" class="result-btn result-btn-senior-online">
+            📄 Senior
           </a>
         </div>
       </div>
@@ -126,40 +143,81 @@
   <section id="results" class="page-section results-section">
     <div class="section-content">
       <h2 class="section-title">🏆 MTRP 2026 Results</h2>
-      <p class="section-subtitle">Offline examination results — congratulations to all participants!</p>
+      <p class="section-subtitle">Congratulations to all participants! Both offline and online results are now available.</p>
 
-      <div class="results-grid">
-        <div class="result-card result-card-subjunior">
-          <div class="result-card-icon">🎓</div>
-          <h3 class="result-card-title">Sub-Junior</h3>
-          <p class="result-card-desc">Grade 5–7</p>
-          <a href="/assets/files/mtrp/mtrp_subjunior_offline_result.pdf" target="_blank" class="result-download-btn">
-            View Result PDF →
-          </a>
+      <!-- Results Mode Tabs -->
+      <div class="results-tabs">
+        <button class="results-tab active" data-tab="offline">📍 Offline Results</button>
+        <button class="results-tab" data-tab="online">💻 Online Results</button>
+      </div>
+
+      <!-- Offline Results -->
+      <div class="results-tab-content active" id="tab-offline">
+        <div class="results-grid">
+          <div class="result-card result-card-subjunior">
+            <div class="result-card-icon">🎓</div>
+            <h3 class="result-card-title">Sub-Junior</h3>
+            <p class="result-card-desc">Grade 5–7</p>
+            <a href="/assets/files/mtrp/mtrp_subjunior_offline_result.pdf" target="_blank" class="result-download-btn">
+              View Result PDF →
+            </a>
+          </div>
+
+          <div class="result-card result-card-junior">
+            <div class="result-card-icon">📐</div>
+            <h3 class="result-card-title">Junior</h3>
+            <p class="result-card-desc">Grade 8–10</p>
+            <a href="/assets/files/mtrp/mtrp_junior_offline_result.pdf" target="_blank" class="result-download-btn">
+              View Result PDF →
+            </a>
+          </div>
+
+          <div class="result-card result-card-senior">
+            <div class="result-card-icon">🏅</div>
+            <h3 class="result-card-title">Senior</h3>
+            <p class="result-card-desc">Grade 11–12</p>
+            <a href="/assets/files/mtrp/mtrp_senior_offline_result.pdf" target="_blank" class="result-download-btn">
+              View Result PDF →
+            </a>
+          </div>
         </div>
+      </div>
 
-        <div class="result-card result-card-junior">
-          <div class="result-card-icon">📐</div>
-          <h3 class="result-card-title">Junior</h3>
-          <p class="result-card-desc">Grade 8–10</p>
-          <a href="/assets/files/mtrp/mtrp_junior_offline_result.pdf" target="_blank" class="result-download-btn">
-            View Result PDF →
-          </a>
-        </div>
+      <!-- Online Results -->
+      <div class="results-tab-content" id="tab-online">
+        <div class="results-grid">
+          <div class="result-card result-card-subjunior-online">
+            <div class="result-card-icon">🎓</div>
+            <h3 class="result-card-title">Sub-Junior</h3>
+            <p class="result-card-desc">Grade 5–7</p>
+            <a href="/assets/files/mtrp/mtrp___subjunior_online_result.pdf" target="_blank" class="result-download-btn result-download-btn-online">
+              View Result PDF →
+            </a>
+          </div>
 
-        <div class="result-card result-card-senior">
-          <div class="result-card-icon">🏅</div>
-          <h3 class="result-card-title">Senior</h3>
-          <p class="result-card-desc">Grade 11–12</p>
-          <a href="/assets/files/mtrp/mtrp_senior_offline_result.pdf" target="_blank" class="result-download-btn">
-            View Result PDF →
-          </a>
+          <div class="result-card result-card-junior-online">
+            <div class="result-card-icon">📐</div>
+            <h3 class="result-card-title">Junior</h3>
+            <p class="result-card-desc">Grade 8–10</p>
+            <a href="/assets/files/mtrp/mtrp____junior_online____result.pdf" target="_blank" class="result-download-btn result-download-btn-online">
+              View Result PDF →
+            </a>
+          </div>
+
+          <div class="result-card result-card-senior-online">
+            <div class="result-card-icon">🏅</div>
+            <h3 class="result-card-title">Senior</h3>
+            <p class="result-card-desc">Grade 11–12</p>
+            <a href="/assets/files/mtrp/mtrp___senior_online_result.pdf" target="_blank" class="result-download-btn result-download-btn-online">
+              View Result PDF →
+            </a>
+          </div>
         </div>
       </div>
 
       <div class="results-note">
         <span>📢</span>
-        <span>Online results will be declared separately. Spring Camp invitations will be sent to top performers in Junior and Senior sections.</span>
+        <span>Spring Camp invitations will be sent to top performers in Junior and Senior sections. Camp is scheduled for March 28–29, 2026 at ISI Kolkata.</span>
       </div>
     </div>
   </section>
@@ -600,8 +658,8 @@
           <div class="timeline-marker"></div>
           <div class="timeline-content">
             <h3 class="timeline-title">Results</h3>
-            <p class="timeline-date">Offline Results: Out ✅</p>
-            <p class="timeline-desc">Online results to be announced</p>
+            <p class="timeline-date">Offline Results: Out ✅ &nbsp;|&nbsp; Online Results: Out ✅</p>
+            <p class="timeline-desc">All results declared</p>
           </div>
         </div>
 
@@ -848,7 +906,7 @@
           <ul class="rule-list">
             <li>Answer key released</li>
             <li>Offline results announced ✅</li>
-            <li>Separate merit lists per mode</li>
+            <li>Online results announced ✅</li>
             <li>All get participation certificates</li>
           </ul>
         </div>
@@ -963,6 +1021,26 @@
 
   <script src="script.js"></script>
   <script src="/assets/js/global.js"></script>
+
+  <!-- Results Tab Script -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const tabs = document.querySelectorAll('.results-tab');
+      const contents = document.querySelectorAll('.results-tab-content');
+
+      tabs.forEach(tab => {
+        tab.addEventListener('click', function () {
+          const target = this.dataset.tab;
+
+          tabs.forEach(t => t.classList.remove('active'));
+          contents.forEach(c => c.classList.remove('active'));
+
+          this.classList.add('active');
+          document.getElementById('tab-' + target).classList.add('active');
+        });
+      });
+    });
+  </script>
 </body>
 
 </html>
